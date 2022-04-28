@@ -1,0 +1,4 @@
+#!/bin/sh
+
+CC=clang CXX=clang++ cmake -B cmake-out/ .
+cmake --build cmake-out/ -j

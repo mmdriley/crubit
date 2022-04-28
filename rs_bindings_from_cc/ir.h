@@ -410,8 +410,8 @@ struct SourceLoc {
   llvm::json::Value ToJson() const;
 
   std::string filename;
-  uint64 line;
-  uint64 column;
+  uint64_t line;
+  uint64_t column;
 };
 
 inline std::ostream& operator<<(std::ostream& o, const SourceLoc& r) {
