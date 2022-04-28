@@ -29,4 +29,5 @@ include_directories(../abseil-cpp/)
 # this project
 
 include_directories(./)
+add_subdirectory(lifetime_annotations)
 add_subdirectory(rs_bindings_from_cc)

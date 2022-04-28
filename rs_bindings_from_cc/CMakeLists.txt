@@ -1,5 +1,6 @@
 add_executable(rs_bindings_from_cc_impl
     ast_consumer.cc
+    ast_convert.cc
     cmdline.cc
     frontend_action.cc
     importer.cc
@@ -18,29 +19,31 @@ add_executable(rs_bindings_from_cc_impl
 )
 
 
-# abseil deps
 target_link_libraries(rs_bindings_from_cc_impl
+    # local
+    lifetime_annotations
+
+    # abseil
     absl::flags_parse
     absl::status
     absl::statusor
-)
 
+    # llvm
+    # LLVMSupport
 
-# llvm deps
-llvm_map_components_to_libnames(llvm_libs support)
-target_link_libraries(rs_bindings_from_cc_impl ${llvm_libs})
-
-
-# clang deps
-target_link_libraries(rs_bindings_from_cc_impl
+    # clang
     clangTooling
 )
 
 
-add_library(ast_convert
-    ast_convert.cc
+# abseil deps
+target_link_libraries(rs_bindings_from_cc_impl
+
 )
 
+
+
+# other source files
 add_library(json_from_cc
     json_from_cc.cc
 )
