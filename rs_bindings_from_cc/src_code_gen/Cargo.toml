@@ -1,0 +1,11 @@
+[package]
+name = "src_code_gen"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.56"
+itertools = "0.9.0"
+proc-macro2 = "1.0.37"
+quote = "1.0.17"
+serde_json = "1.0.64"

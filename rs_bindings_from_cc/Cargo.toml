@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "ir",
+    "src_code_gen",
+]
