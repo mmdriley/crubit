@@ -15,6 +15,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e78d4f1cc4ae33bbfc157ed5d5a5ef3bc29227303d595861deb238fcec4e9457"
 
 [[package]]
+name = "ffi_types"
+version = "0.0.0"
+
+[[package]]
 name = "ir"
 version = "0.0.0"
 dependencies = [
@@ -101,10 +105,14 @@ name = "src_code_gen"
 version = "0.0.0"
 dependencies = [
  "anyhow",
+ "ffi_types",
+ "ir",
  "itertools",
  "proc-macro2",
  "quote",
  "serde_json",
+ "syn",
+ "token_stream_printer",
 ]
 
 [[package]]
@@ -116,6 +124,14 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-xid",
+]
+
+[[package]]
+name = "token_stream_printer"
+version = "0.0.0"
+dependencies = [
+ "anyhow",
+ "proc-macro2",
 ]
 
 [[package]]

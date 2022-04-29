@@ -1,6 +1,8 @@
 [workspace]
 
 members = [
+    "ffi_types",
     "ir",
     "src_code_gen",
+    "token_stream_printer",
 ]
