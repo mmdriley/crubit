@@ -3,6 +3,9 @@ name = "src_code_gen"
 version = "0.0.0"
 edition = "2021"
 
+[lib]
+crate-type = ["staticlib"]
+
 [dependencies]
 anyhow = "1.0.56"
 ffi_types = { path = "../ffi_types" }

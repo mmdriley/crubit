@@ -21,6 +21,7 @@ add_executable(rs_bindings_from_cc_impl
 
 target_link_libraries(rs_bindings_from_cc_impl
     # local
+    ffi_types
     lifetime_annotations
 
     # abseil
@@ -36,9 +37,9 @@ target_link_libraries(rs_bindings_from_cc_impl
 )
 
 
-# abseil deps
 target_link_libraries(rs_bindings_from_cc_impl
-
+    ${CMAKE_SOURCE_DIR}/crates/target/debug/libsrc_code_gen.a
+    dl
 )
 
 
