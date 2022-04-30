@@ -1,5 +1,5 @@
 #!/bin/sh
 
 (cd crates; cargo build)
-CC=clang CXX=clang++ cmake -B cmake-out/ .
+CC=clang-15 CXX=clang++-15 cmake -B cmake-out/ .
 cmake --build cmake-out/ -j

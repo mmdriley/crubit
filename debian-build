@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+# sudo docker run --rm -it --mount type=bind,source=${PWD},destination=/src/crubit debian:latest /src/crubit/debian-build
+
+apt update
+apt upgrade -y
+
+apt install -y \
+    cmake \
+    git \
+    gnupg \
+    lsb-release \
+    software-properties-common \
+    wget \
+    #
+
+mkdir /setup
+cd /setup
+
+wget https://apt.llvm.org/llvm.sh
+chmod +x llvm.sh
+./llvm.sh 15
+
+apt install -y \
+    libclang-dev \
+    #
+
+wget https://sh.rustup.rs -O rustup.sh
+chmod +x rustup.sh
+./rustup.sh -y
+
+source ~/.bashrc
+
+cd /src
+
+git clone https://github.com/abseil/abseil-cpp
+
+cd /src/crubit
+
+./runbuild
+/bin/bash
